@@ -8,11 +8,4 @@ Usage:
     ln -s /etc/sv/<service> /service
  * An example for sshd:
     ln -s /etc/sv/sshd /service
- * We'll try to maintain name compatibility with the services provided by the existing BSD-style init scripts in
-  Archlinux.
-
-Support:
-  
- * You can find Death_Syn or bougyman in #archlinux on freenode.
-
 
