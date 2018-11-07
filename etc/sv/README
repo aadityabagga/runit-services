@@ -22,5 +22,3 @@ So:
            whatever)  should be made in order to guarantee compatibility with the widest
            variety of tools and utilities.
 
-The sv-helper package can be installed from the AUR which adds some simple wrappers for management
-of the symlinks in /service as well as status on services and bringing them up and down.
