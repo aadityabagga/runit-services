@@ -1,2 +1,4 @@
 #!/bin/sh
-exec /usr/bin/vnstatd -n
+
+exec 2>&1
+exec vnstatd -n

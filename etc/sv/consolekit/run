@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if ! [ -d /run/ConsoleKit ]; then
+	mkdir -p -m0755 /run/ConsoleKit
+fi
+
+exec 2>&1
+exec console-kit-daemon --no-daemon
