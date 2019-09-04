@@ -1,6 +1,2 @@
-#!/bin/sh -e
-if [ -f /etc/conf.d/ntp-client.conf ];then
-  . /etc/conf.d/ntp-client.conf
-fi
-/usr/bin/ntpd -n -q $NTP_CLIENT_OPTION
-exec /usr/bin/ntpd $NTPD_ARGS -u ntp -n 2>&1
+#!/bin/sh
+exec ntpd -g -u ntp:ntp -n 2>&1

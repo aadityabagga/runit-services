@@ -1,5 +1,4 @@
 #!/bin/sh -e
-
-exec 2>&1
-# run in debug mode to prevent forking
-exec rpcbind -d
+mountpoint -q /var/lib/nfs/rpc_pipefs ||
+  mount -t rpc_pipefs rpc_pipefs /var/lib/nfs/rpc_pipefs
+exec /usr/bin/rpcbind -f

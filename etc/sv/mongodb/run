@@ -1,3 +1,2 @@
 #!/bin/sh
-
-exec chpst -u mongodb:daemon /usr/bin/mongod -f /etc/mongodb.conf 2>&1
+exec chpst -u mongodb:daemon /usr/bin/mongod --quiet --config /etc/mongodb.conf
