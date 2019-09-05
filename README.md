@@ -9,3 +9,8 @@ Usage:
  * An example for sshd:
     ln -s /etc/sv/sshd /service
 
+References:
+
+* https://github.com/rubyists/runit-services
+* https://github.com/leahneukirchen/ignite
+* https://github.com/void-linux/void-runit
