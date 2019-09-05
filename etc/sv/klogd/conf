@@ -1,0 +1,6 @@
+
+# Options for klogd:
+# '-c 3' = display level 'error' or higher messages on console
+# '-x' = turn off broken EIP translation
+KLOGD_OPTIONS="-c 3 -x"
+

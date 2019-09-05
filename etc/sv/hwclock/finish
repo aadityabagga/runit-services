@@ -1,3 +1,4 @@
 #!/bin/bash
-. /etc/rc.conf
+[ -r /etc/rc.conf ] && . /etc/rc.conf
+[ -z ${HARDWARECLOCK} ] && HARDWARECLOCK="UTC"
 hwclock --adjust ${HARDWARECLOCK:+--$(echo $HARDWARECLOCK |tr A-Z a-z)}

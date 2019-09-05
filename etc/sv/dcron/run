@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -r /etc/default/crond ] && . /etc/default/crond
+mkdir -p /run/cron
+exec 2>&1
+exec crond -f

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ -r /etc/default/atd ] && . /etc/default/atd
+exec atd -f -d
