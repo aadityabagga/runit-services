@@ -6,19 +6,19 @@ SED = /bin/sed
 DESTDIR =
 BINDIR = /usr/bin
 DOCDIR = /usr/share/doc/$(NAME)
-CONDIR = /etc/sv
+SRVDIR = /etc/sv
 
 all:
 
 install: all
 	$(INSTALL) -d $(DESTDIR)$(BINDIR)
 	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
-	$(INSTALL) -d $(DESTDIR)$(CONDIR)
+	$(INSTALL) -d $(DESTDIR)$(SRVDIR)
 	$(INSTALL) -D -m 0755 rsvlog "$(DESTDIR)$(BINDIR)/rsvlog"
 	$(INSTALL) -D -m 0644 COPYRIGHT "$(DESTDIR)$(DOCDIR)/COPYRIGHT"
 	$(INSTALL) -D -m 0644 README.md "$(DESTDIR)$(DOCDIR)/README.md"
 	for dir in etc/sv/*; do \
-		cp -a "$$dir" "$(DESTDIR)$(CONDIR)/"; \
+		cp -a "$$dir" "$(DESTDIR)$(SRVDIR)/"; \
 	done
 
 uninstall:
