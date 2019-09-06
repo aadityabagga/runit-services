@@ -1,12 +1,11 @@
 NAME = runit-services
-VERSION = 0.1
 SHELL = /bin/bash
 INSTALL = /usr/bin/install
 MSGFMT = /usr/bin/msgfmt
 SED = /bin/sed
 DESTDIR =
 BINDIR = /usr/bin
-DOCDIR = /usr/share/doc/$(NAME)-$(VERSION)
+DOCDIR = /usr/share/doc/$(NAME)
 CONDIR = /etc/sv
 
 all:
