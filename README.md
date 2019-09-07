@@ -14,3 +14,4 @@ See also:
 * https://github.com/rubyists/runit-services
 * https://github.com/leahneukirchen/ignite
 * https://github.com/void-linux/void-runit
+* https://github.com/void-linux/void-packages  (individual srcpkgs)

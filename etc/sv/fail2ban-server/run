@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p /var/run/fail2ban
+
+exec 2>&1
+exec fail2ban-server -f
