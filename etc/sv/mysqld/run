@@ -1,4 +1,0 @@
-#!/bin/sh
-[ ! -d /var/run/mysqld ] && mkdir -p /var/run/mysqld
-chown mysql:mysql /var/run/mysqld
-exec chpst -u mysql:mysql /usr/libexec/mysqld --user=mysql 2>&1

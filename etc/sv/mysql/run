@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[ -r conf ] && . ./conf
+
+[ ! -d /var/run/mysql ] && mkdir -p /var/run/mysql
+chown mysql:mysql /var/run/mysql
+
+exec chpst -u mysql:mysql /usr/libexec/mysqld \
+       	--defaults-file="${MYSQLD_CONF:-/etc/my.cnf}" \
+	"${MY_OPTS:---skip-networking}" \
+       	--user=mysql 2>&1
+
