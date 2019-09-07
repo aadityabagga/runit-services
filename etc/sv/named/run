@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# can be run as different user
+[ -r conf ] && . ./conf
+
+mkdir -p /var/run/named
+chown "${NAMED_USER:-root}" /var/run/named
+
+exec named -u "${NAMED_USER:-root}" -f

@@ -15,3 +15,4 @@ See also:
 * https://github.com/leahneukirchen/ignite
 * https://github.com/void-linux/void-runit
 * https://github.com/void-linux/void-packages  (individual srcpkgs)
+* http://smarden.org/runit1/runscripts.html
