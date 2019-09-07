@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# should be start after services like dbus, networkmanager
+
+exec 2>&1
+tlp init start || exit 1
+exec chpst -b tlp pause
