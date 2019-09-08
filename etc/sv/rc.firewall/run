@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# A runit service for Slackware's /etc/rc.d/rc.firewall
+# https://docs.slackware.com/howtos:security:basic_security#setup_a_firewall
+
+rcd_service="/etc/rc.d/rc.firewall"
+if [ -x "${rcd_service}" ]; then
+  "${rcd_service}"
+else
+  echo "${rcd_service} not executable"
+  exit 1
+fi
+
+exec chpst -b rc.firewall pause

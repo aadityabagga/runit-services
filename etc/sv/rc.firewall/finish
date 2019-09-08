@@ -1,0 +1,3 @@
+#!/bin/sh
+rcd_service="/etc/rc.d/rc.firewall"
+"${rcd_service}" stop
