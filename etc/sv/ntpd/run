@@ -1,2 +1,7 @@
 #!/bin/sh
-exec ntpd -g -u ntp:ntp -n 2>&1
+
+# can be run as different user
+[ -r conf ] && . ./conf
+ntpd_user=${NTPD_USER:-ntp}
+
+exec ntpd -g -u "$ntpd_user":"$ntpd_user" -n 2>&1

@@ -1,0 +1,6 @@
+#!/bin/sh
+[ -r conf ] && . ./conf
+
+local_service_shutdown="${RC_LOCAL_SHUTDOWN:-/etc/rc.local.shutdown}"
+[ -x "${local_service_shutdown}" ] && "${local_service_shutdown}"
+

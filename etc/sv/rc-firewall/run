@@ -11,4 +11,4 @@ else
   exit 1
 fi
 
-exec chpst -b rc.firewall pause
+exec chpst -b rc-firewall pause

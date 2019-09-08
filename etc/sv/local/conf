@@ -1,0 +1,2 @@
+#RC_LOCAL="/etc/rc.local"
+#RC_LOCAL_SHUTDOWN="/etc/rc.local.shutdown"

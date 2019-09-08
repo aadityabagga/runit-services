@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# should be start after services like dbus, networkmanager
+
+[ -r conf ] && . ./conf
+local_service="${RC_LOCAL:-/etc/rc.local}"
+
+if [ -x "${local_service}" ]; then
+  "${local_service}"
+else
+  echo "${local_service} not executable"
+  exit 1
+fi
+
+exec chpst -b local pause
