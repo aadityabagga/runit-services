@@ -1,2 +1,4 @@
 #!/bin/sh
-exec /usr/bin/dnsmasq -k --user=dnsmasq
+[ -r conf ] && . ./conf
+dnsmasq_user="${DNSMASQ_USER:-dnsmasq}"
+exec dnsmasq -k --user="$dnsmasq_user"
