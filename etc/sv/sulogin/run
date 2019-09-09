@@ -1,2 +1,6 @@
 #!/bin/sh
-exec setsid /sbin/sulogin -p </dev/tty1 >/dev/tty1 2>&1
+[ -r conf ] && . ./conf
+
+read -r tty < /sys/class/tty/console/active
+tty=/dev/${tty##* }
+exec setsid sulogin ${OPTS:=-p} < $tty >$tty 2>&1
