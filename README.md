@@ -8,9 +8,14 @@ Usage:
     ln -s /etc/sv/<service> /service
  * An example for sshd:
     ln -s /etc/sv/sshd /service
+
+Notes:
+
  * Logging is done via runit's svlod or via syslog, depending on service.
     [tai64nlocal](https://cr.yp.to/daemontools/tai64nlocal.html) from the daemontools package
  is recommended for checking log timestamps.
+ * Some one shot services depend on the [pause](https://github.com/void-linux/void-runit/blob/master/pause.c) program.
+
 
 See also:
 
