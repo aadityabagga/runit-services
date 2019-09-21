@@ -1,5 +1,5 @@
 #!/bin/bash
 
-[ -f /etc/conf.d/ddclient ] && . /etc/conf.d/ddclient
+[ -r conf ] && . ./conf
 
 exec ddclient -foreground ${EXTRA_ARGS}
