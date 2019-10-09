@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 exec 2>&1
-exec /usr/bin/gpm -D -m /dev/input/mice -t imps2
+exec gpm -D -m /dev/input/mice -t imps2
