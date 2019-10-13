@@ -24,3 +24,4 @@ See also:
 * https://github.com/void-linux/void-runit
 * https://github.com/void-linux/void-packages  (individual srcpkgs)
 * http://smarden.org/runit1/runscripts.html
+* https://bitbucket.org/avery_payne/supervision-scripts

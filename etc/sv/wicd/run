@@ -1,3 +1,4 @@
 #!/bin/sh
-sv check dbus >/dev/null &&
+
+sv check dbus >/dev/null || exit 1
 exec wicd --no-daemon

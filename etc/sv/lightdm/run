@@ -1,4 +1,5 @@
 #!/bin/sh
 
 sv check dbus >/dev/null || exit 1
-exec NetworkManager -n
+mkdir -p /var/run/lightdm
+exec lightdm

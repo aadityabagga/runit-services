@@ -1,3 +1,4 @@
 #!/bin/sh
-[ ! -d /run/dbus ] && install -m755 -g 81 -o 81 -d /run/dbus
+
+mkdir -p /var/run/dbus
 exec dbus-daemon --system --nofork
