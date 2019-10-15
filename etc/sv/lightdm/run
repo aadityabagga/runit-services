@@ -1,5 +1,8 @@
 #!/bin/sh
 
-sv check dbus >/dev/null || exit 1
+if [ -e /service/dbus ]; then
+  sv check /service/dbus >/dev/null || exit 1
+fi
+
 mkdir -p /var/run/lightdm
 exec lightdm
