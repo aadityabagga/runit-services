@@ -3,7 +3,7 @@
 # should be start after services like dbus, networkmanager
 for service in dbus networkmanager NetworkManager; do
   if [ -e "/var/service/${service}" ]; then
-	sv check "$service" > /dev/null || exit 1
+	sv check "/var/service/${service}" > /dev/null || exit 1
   fi
 done
 
