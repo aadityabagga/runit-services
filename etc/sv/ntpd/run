@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# can be run as different user
+DAEMON_OPTS=''
 [ -r conf ] && . ./conf
-ntpd_user=${NTPD_USER:-ntp}
 
-exec ntpd -g -u "$ntpd_user":"$ntpd_user" -n 2>&1
+exec 2>&1
+exec ntpd -g -n ${DAEMON_OPTS}

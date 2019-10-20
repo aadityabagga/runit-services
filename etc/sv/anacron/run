@@ -3,5 +3,6 @@
 DAEMON_OPTS=''
 [ -r conf ] && . ./conf
 
+exec 2>&1
 anacron -d ${DAEMON_OPTS}
 exec chpst -b anacron-run pause

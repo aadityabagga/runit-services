@@ -1,1 +1,1 @@
-#NTPD_USER=ntp
+-u ntp:ntp
