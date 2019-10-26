@@ -1,6 +1,5 @@
-
 # Uncomment the following line to use the -c option to syslogd.  This will
 # disable suppressing repeated messages, which may be useful with tools that
 # parse the logs, such as fail2ban:
-#SYSLOGD_OPTIONS="-c "
 
+#DAEMON_OPTS="-c"

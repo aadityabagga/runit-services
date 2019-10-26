@@ -3,10 +3,12 @@ SHELL = /bin/bash
 INSTALL = /usr/bin/install
 MSGFMT = /usr/bin/msgfmt
 SED = /bin/sed
+FIND = /usr/bin/find
 DESTDIR =
 BINDIR = /usr/bin
 DOCDIR = /usr/share/doc/$(NAME)
 SRVDIR = /etc/sv
+RUNITSVDIR = /service
 
 all:
 
@@ -20,6 +22,8 @@ install: all
 	for dir in etc/sv/*; do \
 		cp -a "$$dir" "$(DESTDIR)$(SRVDIR)/"; \
 	done
+	# update service directory checks
+	$(FIND) "$(DESTDIR)$(SRVDIR)" -type f -exec $(SED) -i "s#/service#$(RUNITSVDIR)#g" {} \;
 
 uninstall:
 	rm $(DESTDIR)$(BINDIR)/rsvlog
