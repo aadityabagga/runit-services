@@ -5,12 +5,11 @@ if ! [ -d /run/ConsoleKit ]; then
 fi
 
 # wait for services if available
-if [ -e /service/cgmanager ]; then
-	sv check /service/cgmanager >/dev/null || exit 1
-fi
-if [ -e /service/dbus ]; then
-	sv check /service/dbus >/dev/null || exit 1
-fi
+for service in cgmanager dbus; do
+  if [ -e "/service/${service}" ]; then
+    sv check "/service/${service}" >/dev/null || exit 1
+  fi
+done
 
 exec 2>&1
 exec console-kit-daemon --no-daemon

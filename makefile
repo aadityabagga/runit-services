@@ -25,7 +25,8 @@ install: all
 
 update-config:
 	# update service directory checks
-	$(FIND) "$(DESTDIR)$(SRVDIR)" -type f -name run -exec $(SED) "s,[[:space:]]/service, $(RUNITSVDIR),g" -i {} \;
+	$(FIND) "$(DESTDIR)$(SRVDIR)" -type f -name run -exec $(SED) -e "s,[[:space:]]/service, $(RUNITSVDIR),g" \
+		 -e "s,\"/service,\"$(RUNITSVDIR),g" -i {} \;
 
 uninstall:
 	rm $(DESTDIR)$(BINDIR)/rsvlog
