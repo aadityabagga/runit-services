@@ -1,0 +1,6 @@
+#!/bin/sh
+# sample user directory service
+# http://smarden.org/runit/faq.html#user
+
+exec 2>&1
+exec chpst -u user runsvdir /home/user/service
