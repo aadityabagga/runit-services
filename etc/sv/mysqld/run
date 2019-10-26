@@ -3,10 +3,10 @@
 [ -r conf ] && . ./conf
 
 [ ! -d /var/run/mysql ] && mkdir -p /var/run/mysql
-chown mysql:mysql /var/run/mysql
+chown "${MYSQLD_USER:-mysql}":"${MYSQLD_USER:-mysql}" /var/run/mysql
 
-exec chpst -u mysql:mysql /usr/libexec/mysqld \
-       	--defaults-file="${MYSQLD_CONF:-/etc/my.cnf}" \
+exec 2>&1
+exec chpst -u "${MYSQLD_USER:-mysql}":"${MYSQLD_USER:-mysql}" mysqld \
+	--defaults-file="${MYSQLD_CONF:-/etc/my.cnf}" \
 	"${MY_OPTS:---skip-networking}" \
-       	--user=mysql 2>&1
-
+	--user="${MYSQLD_USER:-mysql}"

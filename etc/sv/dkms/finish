@@ -1,3 +1,5 @@
 #!/bin/sh
 
+[ -r conf ] && . ./conf
+
 exec dkms stop

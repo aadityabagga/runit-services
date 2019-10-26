@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# can be run as different user
 [ -r conf ] && . ./conf
 
 mkdir -p /var/run/named
