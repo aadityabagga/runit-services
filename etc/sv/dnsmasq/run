@@ -1,4 +1,6 @@
 #!/bin/sh
+
+DAEMON_OPTS='--user=dnsmasq'
 [ -r conf ] && . ./conf
-dnsmasq_user="${DNSMASQ_USER:-dnsmasq}"
-exec dnsmasq -k --user="$dnsmasq_user"
+
+exec dnsmasq -k ${DAEMON_OPTS}

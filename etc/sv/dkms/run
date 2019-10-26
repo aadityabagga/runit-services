@@ -1,4 +1,6 @@
 #!/bin/sh
 set -e
-/usr/lib/systemd/scripts/dkms start >/dev/null
+
+exec 2>&1
+dkms start
 exec chpst -b dkms pause

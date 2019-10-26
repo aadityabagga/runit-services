@@ -1,1 +1,1 @@
-#EXTRA_ARGS='-daemon 900 -verbose'
+#DAEMON_OPTS='-daemon 900 -verbose'

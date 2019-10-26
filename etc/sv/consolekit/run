@@ -5,11 +5,11 @@ if ! [ -d /run/ConsoleKit ]; then
 fi
 
 # wait for services if available
-if [ -e /var/service/cgmanager ]; then
-	sv check cgmanager >/dev/null || exit 1
+if [ -e /service/cgmanager ]; then
+	sv check /service/cgmanager >/dev/null || exit 1
 fi
-if [ -e /var/service/dbus ]; then
-	sv check dbus >/dev/null || exit 1
+if [ -e /service/dbus ]; then
+	sv check /service/dbus >/dev/null || exit 1
 fi
 
 exec 2>&1

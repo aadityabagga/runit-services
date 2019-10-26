@@ -1,3 +1,4 @@
 #!/bin/sh
 
-exec monit -I 2>&1
+exec 2>&1
+exec monit -I
