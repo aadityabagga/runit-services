@@ -22,8 +22,10 @@ install: all
 	for dir in etc/sv/*; do \
 		cp -a "$$dir" "$(DESTDIR)$(SRVDIR)/"; \
 	done
+
+update-config:
 	# update service directory checks
-	$(FIND) "$(DESTDIR)$(SRVDIR)" -type f -exec $(SED) -i "s#/service#$(RUNITSVDIR)#g" {} \;
+	$(FIND) "$(DESTDIR)$(SRVDIR)" -type f -name run -exec $(SED) "s,[[:space:]]/service, $(RUNITSVDIR),g" -i {} \;
 
 uninstall:
 	rm $(DESTDIR)$(BINDIR)/rsvlog
