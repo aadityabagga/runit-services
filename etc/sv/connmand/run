@@ -1,6 +1,7 @@
 #!/bin/sh
 
+DAEMON_OPTS=''
 [ -r conf ] && . ./conf
 
 exec 2>&1
-exec connmand -n ${OPTS}
+exec connmand -n ${DAEMON_OPTS}

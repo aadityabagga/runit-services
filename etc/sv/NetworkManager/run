@@ -4,4 +4,5 @@ if [ -e /service/dbus ]; then
   sv check /service/dbus >/dev/null || exit 1
 fi
 
+exec 2>&1
 exec NetworkManager -n
