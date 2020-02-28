@@ -9,7 +9,7 @@ ulimit -q unlimited # The maximum POSIX message queue size
 ulimit -u unlimited # The maximum number of processes available to a single user.
 ulimit -v unlimited # The maximum amount of virtual memory available to the process.
 ulimit -x unlimited # ???
-ulimit -s 8192      # The maximum stack size
+ulimit -s 240       # The maximum stack size
 ulimit -l unlimited # The maximum size that may be locked into memory.
 ulimit -a           # All current limits are reported.
 echo "Starting Freeswitch"
